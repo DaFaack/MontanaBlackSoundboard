@@ -1,4 +1,4 @@
-package com.greenwoodsproductions.montanablacksoundboard.tabs;
+package com.riftgames.montanablacksoundboard.tabs;
 
 import android.content.Context;
 import android.content.Intent;
@@ -15,10 +15,8 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.GridView;
 
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.greenwoodsproductions.montanablacksoundboard.MainActivity;
-import com.greenwoodsproductions.montanablacksoundboard.R;
+import com.riftgames.montanablacksoundboard.MainActivity;
+import com.riftgames.montanablacksoundboard.R;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -28,16 +26,20 @@ import java.io.OutputStream;
 /**
  * Created by Ratan on 7/29/2015.
  */
-public class Tab3 extends Fragment {
+public class Tab1 extends Fragment {
     GridView myGridView;
-    public String[] items3 = {
-            "Alter Digga", "Das gibst doch nicht", "...Die letzte Scheiße", "Du kleiner DRECKIGER", "Ich hasse das", "Ich packs nichtmehr", "Is klar Alter!", "Jajajaaa", "Janhela...", "Mein Gott",
-            "Nich euer Ernst", "...So lächerlich", "So spielt es sich gerne", "Spieß umdrehen", "Bullshit", "WAS ist das ???", "WAS soll das ???", "Wie findest du das ?"
+
+    int max;
+    public String[] items1 ={
+            "MOOOOIN...", "Bug oder Was ?", "Schnauze halten", "Dumme Sau", "Eieiei...", "Bullshit Scheiße", "Huansohn", "Ich glaubs nicht !", "Inzucht Camper", "Klarkommen",
+            "Lache 1", "Lache 2", "Lache 3", "Lache 4", "Lache 5", "Lache 6", "Laufen nicht Sitzen", "Loch in der Wand", "Action", "Was soll das ?",
+            "NOHOMO-aber...", "Wiederlicher", "Wehgatan", "Wie geil ist denn das 1", "Wie geil ist denn das 2"
     };
 
     public static int[] soundfiles= {
-            R.raw.aalterdiggah,R.raw.dasgibtsdochnicht,R.raw.dieltztescheisse,R.raw.dukleinerdreckiger,R.raw.ichassedas,R.raw.ichpacksbnichmehr,R.raw.isklaralter,R.raw.jajajaaaaa,R.raw.janhelal,R.raw.meingott,
-            R.raw.nicheuerernst,R.raw.solaecherlich,R.raw.sospieltsichsgerne,R.raw.spiessumdrehen,R.raw.wasfuernbullshit,R.raw.wasistdas,R.raw.wassollndas,R.raw.wiefindestdudashe
+            R.raw.moinmeinepunktpunnkktpunkt,R.raw.bugioderwas,R.raw.dukannstauchmaldieschcnauzehalten,R.raw.dummesau,R.raw.eieieisiehtdiegeilaus,R.raw.groesstebullshitscheisse,R.raw.huansohn,R.raw.ichglaubsnich,R.raw.inzuchtcamper,R.raw.kommnichauflebenklar,
+            R.raw.lache,R.raw.lache2,R.raw.lache3,R.raw.lache4,R.raw.lache5,R.raw.lache6,R.raw.laufenichsitzen,R.raw.lochinderwand,R.raw.alteristhieraction,R.raw.neinwassolldenndass,
+            R.raw.nohomoaber,R.raw.soeinwidderlicher,R.raw.sowasvonwehgetan,R.raw.wiegeilisndas,R.raw.wiegeilistdas
 
 
     };
@@ -45,12 +47,14 @@ public class Tab3 extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView=inflater.inflate(R.layout.tab3,container,false);
+        View rootView=inflater.inflate(R.layout.tab1,container,false);
 
 
 
-        myGridView = (GridView)rootView.findViewById(R.id.tab3GridView);
-        myGridView.setAdapter(new CustomGridAdapter(getActivity(), items3));
+
+
+        myGridView = (GridView)rootView.findViewById(R.id.tab1GridView);
+        myGridView.setAdapter(new CustomGridAdapter(getActivity(), items1));
         myGridView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
@@ -141,7 +145,7 @@ public class Tab3 extends Fragment {
                 @Override
                 public void onClick(View v) {
                     if (context instanceof MainActivity) {
-                        ((MainActivity) context).tab3(position);
+                        ((MainActivity) context).tab1(position);
                     }
                 }
             });

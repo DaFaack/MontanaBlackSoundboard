@@ -1,4 +1,4 @@
-package com.greenwoodsproductions.montanablacksoundboard;
+package com.riftgames.montanablacksoundboard;
 
 import org.junit.Test;
 

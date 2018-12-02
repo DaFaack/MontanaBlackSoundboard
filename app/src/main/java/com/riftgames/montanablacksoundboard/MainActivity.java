@@ -1,9 +1,8 @@
-package com.greenwoodsproductions.montanablacksoundboard;
+package com.riftgames.montanablacksoundboard;
 //stand 5.9.
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.MediaPlayer;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.design.widget.NavigationView;
@@ -22,9 +21,9 @@ import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
-import com.greenwoodsproductions.montanablacksoundboard.tabs.Tab1;
-import com.greenwoodsproductions.montanablacksoundboard.tabs.Tab2;
-import com.greenwoodsproductions.montanablacksoundboard.tabs.Tab3;
+import com.riftgames.montanablacksoundboard.tabs.Tab1;
+import com.riftgames.montanablacksoundboard.tabs.Tab2;
+import com.riftgames.montanablacksoundboard.tabs.Tab3;
 
 import java.io.File;
 
@@ -49,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         mInterstitialAd = new InterstitialAd(MainActivity.this);
-        mInterstitialAd.setAdUnitId("ca-app-pub-6906000706399183/3270841382");
+        mInterstitialAd.setAdUnitId(getText(R.string.interstitial_ad_unit_id).toString());
         mInterstitialAd.loadAd(adRequest);
         mInterstitialAd.setAdListener(new AdListener() {
             // Listen for when user closes ad
@@ -60,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        final File FILES_PATH = new File(Environment.getExternalStorageDirectory(), "Android/data/com.greenwoodsproductions.montanablacksoundboard/files");
+        final File FILES_PATH = new File(Environment.getExternalStorageDirectory(), "Android/data/com.riftgames.montanablacksoundboard/files");
 
 
         if (Environment.MEDIA_MOUNTED.equals(
@@ -116,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
                 if(menuItem.getItemId() == R.id.teilen){
                     Intent shareIntent = new Intent(Intent.ACTION_SEND);
                     shareIntent.setType("text/plain");
-                    shareIntent.putExtra(Intent.EXTRA_TEXT, "https://play.google.com/store/apps/details?id=com.greenwoodsproductions.montanablacksoundboard");
+                    shareIntent.putExtra(Intent.EXTRA_TEXT, "https://play.google.com/store/apps/details?id=com.riftgames.montanablacksoundboard");
                     startActivity(Intent.createChooser(shareIntent,  "Teilen über..."));
                 }
 

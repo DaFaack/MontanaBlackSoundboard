@@ -1,4 +1,4 @@
-package com.greenwoodsproductions.montanablacksoundboard;
+package com.riftgames.montanablacksoundboard;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.greenwoodsproductions.montanablacksoundboard", appContext.getPackageName());
+        assertEquals("com.riftgames.montanablacksoundboard", appContext.getPackageName());
     }
 }

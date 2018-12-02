@@ -1,4 +1,4 @@
-package com.greenwoodsproductions.montanablacksoundboard;
+package com.riftgames.montanablacksoundboard;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -11,9 +11,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.greenwoodsproductions.montanablacksoundboard.tabs.Tab2;
-import com.greenwoodsproductions.montanablacksoundboard.tabs.Tab3;
-import com.greenwoodsproductions.montanablacksoundboard.tabs.Tab1;
+import com.riftgames.montanablacksoundboard.tabs.Tab2;
+import com.riftgames.montanablacksoundboard.tabs.Tab3;
+import com.riftgames.montanablacksoundboard.tabs.Tab1;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
@@ -33,7 +33,7 @@ public class TabFragment extends Fragment {
 
         AdRequest adRequest = new AdRequest.Builder().build();
         mInterstitialAd = new InterstitialAd(getContext());
-        mInterstitialAd.setAdUnitId("ca-app-pub-6906000706399183/3270841382");
+        mInterstitialAd.setAdUnitId(getText(R.string.interstitial_ad_unit_id).toString());
         mInterstitialAd.loadAd(adRequest);
         mInterstitialAd.setAdListener(new AdListener() {
             @Override
@@ -82,7 +82,7 @@ public class TabFragment extends Fragment {
 
                         AdRequest adRequest = new AdRequest.Builder().build();
                         mInterstitialAd = new InterstitialAd(getContext());
-                        mInterstitialAd.setAdUnitId("ca-app-pub-6906000706399183/3270841382");
+                        mInterstitialAd.setAdUnitId(getText(R.string.interstitial_ad_unit_id).toString());
                         mInterstitialAd.loadAd(adRequest);
                         }
                     }

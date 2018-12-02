@@ -1,4 +1,4 @@
-package com.greenwoodsproductions.montanablacksoundboard.tabs;
+package com.riftgames.montanablacksoundboard.tabs;
 
 import android.content.Context;
 import android.content.Intent;
@@ -15,10 +15,8 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.GridView;
 
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.greenwoodsproductions.montanablacksoundboard.MainActivity;
-import com.greenwoodsproductions.montanablacksoundboard.R;
+import com.riftgames.montanablacksoundboard.MainActivity;
+import com.riftgames.montanablacksoundboard.R;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -26,22 +24,22 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 /**
- * Created by Ratan on 7/29/2015.
+ * Created by Oclemmy on 5/10/2016 for ProgrammingWizards Channel and http://www.Camposha.com.
  */
-public class Tab1 extends Fragment {
+public class Tab2 extends Fragment{
+
     GridView myGridView;
 
-    int max;
-    public String[] items1 ={
-            "MOOOOIN...", "Bug oder Was ?", "Schnauze halten", "Dumme Sau", "Eieiei...", "Bullshit Scheiße", "Huansohn", "Ich glaubs nicht !", "Inzucht Camper", "Klarkommen",
-            "Lache 1", "Lache 2", "Lache 3", "Lache 4", "Lache 5", "Lache 6", "Laufen nicht Sitzen", "Loch in der Wand", "Action", "Was soll das ?",
-            "NOHOMO-aber...", "Wiederlicher", "Wehgatan", "Wie geil ist denn das 1", "Wie geil ist denn das 2"
+    public String[] items2 ={
+            "Alles klar", "Brathänchen", "Das weiß ich doch!", "EY ne", "Genauhuhu", "Hää", "Hallo, hör mal zu!", "Ja", "Jaeah", "Jahahaaa",
+            "Jajaja", "Jawolski", "Kichern", "LABER", "Lecker SChmecker", "Neiiiin", "Nein", "Nenene", "Nice Baby!", "Oajaa",
+            "Oh Fuck", "Oh Shit", "OMG", "Omg Omg", "OOOOOAH", "Spritzig oder?", "Uhhhh"
     };
 
     public static int[] soundfiles= {
-            R.raw.moinmeinepunktpunnkktpunkt,R.raw.bugioderwas,R.raw.dukannstauchmaldieschcnauzehalten,R.raw.dummesau,R.raw.eieieisiehtdiegeilaus,R.raw.groesstebullshitscheisse,R.raw.huansohn,R.raw.ichglaubsnich,R.raw.inzuchtcamper,R.raw.kommnichauflebenklar,
-            R.raw.lache,R.raw.lache2,R.raw.lache3,R.raw.lache4,R.raw.lache5,R.raw.lache6,R.raw.laufenichsitzen,R.raw.lochinderwand,R.raw.alteristhieraction,R.raw.neinwassolldenndass,
-            R.raw.nohomoaber,R.raw.soeinwidderlicher,R.raw.sowasvonwehgetan,R.raw.wiegeilisndas,R.raw.wiegeilistdas
+            R.raw.allesklar,R.raw.brathaenchen,R.raw.dasweissichdoch,R.raw.eynehehe,R.raw.genauhuhu,R.raw.hae,R.raw.hallohoermalzu,R.raw.ja,R.raw.jaeah,R.raw.jahahahaaa,
+            R.raw.jajaja,R.raw.jawoski,R.raw.kichern,R.raw.laber,R.raw.leckerschmecka,R.raw.neiiiiin,R.raw.nein,R.raw.nenene,R.raw.nicebaby,R.raw.oajaa,
+            R.raw.ohfuck,R.raw.ohshit,R.raw.omg,R.raw.omgomg,R.raw.ooooooah,R.raw.spritzigoder,R.raw.uuuuh
 
 
     };
@@ -49,18 +47,20 @@ public class Tab1 extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView=inflater.inflate(R.layout.tab1,container,false);
+        View rootView=inflater.inflate(R.layout.tab2,container,false);
 
 
 
 
 
-        myGridView = (GridView)rootView.findViewById(R.id.tab1GridView);
-        myGridView.setAdapter(new CustomGridAdapter(getActivity(), items1));
+        myGridView = (GridView)rootView.findViewById(R.id.tab2GridView);
+        myGridView.setAdapter(new CustomGridAdapter(getActivity(), items2));
         myGridView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
                                            int pos, long id) {
+
+
                 File dest = Environment.getExternalStorageDirectory();
 
                 InputStream in;
@@ -147,7 +147,7 @@ public class Tab1 extends Fragment {
                 @Override
                 public void onClick(View v) {
                     if (context instanceof MainActivity) {
-                        ((MainActivity) context).tab1(position);
+                        ((MainActivity) context).tab2(position);
                     }
                 }
             });
@@ -158,4 +158,3 @@ public class Tab1 extends Fragment {
 
     }
 }
-
