@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     FragmentManager mFragmentManager;
     FragmentTransaction mFragmentTransaction;
     public InterstitialAd mInterstitialAd;
+    public String test;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
